@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        // Function to find leap years within a given range
+        function findLeapYears(startYear, endYear) {
+            var leapYears = [];
+
+            for (var year = startYear; year <= endYear; year++) {
+                if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+                    leapYears.push(year);
+                }
+            }
+
+            return leapYears;
+        }
+
+        // Prompt the user to enter the range of years
+        var startYear = parseInt(prompt("Enter the start year:"));
+        var endYear = parseInt(prompt("Enter the end year:"));
+
+        // Find the leap years within the given range
+        var leapYearsArray = findLeapYears(startYear, endYear);
+
+        // Display the leap years
+        console.log("Leap years between", startYear, "and", endYear, ":");
+        console.log(leapYearsArray);
+
+    </script>
+</body>
+</html>
