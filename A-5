@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        // Function to encrypt text using Caesar Cipher
+        function caesarCipherEncrypt(text, shift) {
+            // Convert the shift pattern to a valid range
+            shift = ((shift % 26) + 26) % 26;
+
+            // Convert the text to uppercase for simplicity
+            text = text.toUpperCase();
+
+            var encryptedText = "";
+
+            for (var i = 0; i < text.length; i++) {
+                var char = text[i];
+
+                // Check if the character is a letter
+                if (char.match(/[A-Z]/)) {
+                    // Get the ASCII code of the character
+                    var ascii = text.charCodeAt(i);
+
+                    // Apply the shift to the ASCII code
+                    var shiftedAscii = ((ascii - 65 + shift) % 26) + 65;
+
+                    // Convert the shifted ASCII code back to a character
+                    var shiftedChar = String.fromCharCode(shiftedAscii);
+
+                    // Append the shifted character to the encrypted text
+                    encryptedText += shiftedChar;
+                } else {
+                    // Append non-alphabetic characters as they are
+                    encryptedText += char;
+                }
+            }
+
+            return encryptedText;
+        }
+
+        // Prompt the user for input text and shift pattern
+        var inputText = prompt("Enter the text to encrypt:");
+        var shiftPattern = parseInt(prompt("Enter the shift pattern:"));
+
+        // Encrypt the input text using the shift pattern
+        var encryptedText = caesarCipherEncrypt(inputText, shiftPattern);
+
+        // Display the encrypted text using an alert
+        alert("Encrypted Text:\n" + encryptedText);
+
+    </script>
+</body>
+</html>
