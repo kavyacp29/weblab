@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>// Prompt the user to enter the first number
+        var num1 = prompt("Enter the first number:");
+
+        // Prompt the user to enter the second number
+        var num2 = prompt("Enter the second number:");
+
+        // Convert the input strings to numbers
+        num1 = parseFloat(num1);
+        num2 = parseFloat(num2);
+
+        // Calculate the sum
+        var sum = num1 + num2;
+
+        // Display the sum using an alert box
+        alert("The sum is: " + sum);
+</script>
+   
+
+</body>
+</html>
