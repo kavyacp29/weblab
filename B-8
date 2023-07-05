@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        function validateEmail(email) {
+            const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return regex.test(email);
+        }
+
+        // Example usage:
+        const email = prompt("Enter an email address:");
+        const isValid = validateEmail(email);
+
+        if (isValid) {
+            alert("Email is valid.");
+        } else {
+            alert("Email is invalid.");
+        }
+
+    </script>
+</body>
+</html>
