@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        let virusComposition = prompt("Enter the virus composition:");
+        let n = parseInt(prompt("Enter the number of people to check:"));
+
+        for (let i = 1; i <= n; i++) {
+            let bloodComposition = prompt(`Enter the blood composition of person ${i}:`);
+
+            if (isSubsequence(bloodComposition, virusComposition)) {
+                alert(`Person ${i} is POSITIVE.`);
+            } else {
+                alert(`Person ${i} is NEGATIVE.`);
+            }
+        }
+
+        function isSubsequence(str1, str2) {
+            let i = 0;
+            let j = 0;
+
+            while (i < str1.length && j < str2.length) {
+                if (str1.charAt(i) == str2.charAt(j)) {
+                    i++;
+                }
+                j++;
+            }
+
+            return i == str1.length;
+        }
+
+    </script>
+</body>
+</html>
