@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        function bookFlight() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    const isFlightBooked = true; // Simulating successful booking
+                    if (isFlightBooked) {
+                        console.log('Flight booked successfully');
+                        resolve();
+                    } else {
+                        reject('Flight booking failed');
+                    }
+                }, 2000);
+            });
+        }
+
+        function bookHotel() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    const isHotelBooked = true; // Simulating successful booking
+                    if (isHotelBooked) {
+                        console.log('Hotel booked successfully');
+                        resolve();
+                    } else {
+                        reject('Hotel booking failed');
+                    }
+                }, 2000);
+            });
+        }
+
+        bookFlight()
+            .then(() => {
+                return bookHotel();
+            })
+            .then(() => {
+                console.log('Everything booked successfully');
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+    </script>
+</body>
+</html>
