@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+     
+
+
+        // Define an arrow function to reverse the number
+        const reverseNumber = number => {
+            const reversedString = String(number).split('').reverse().join('');
+            return parseInt(reversedString);
+        };
+
+        // Prompt the user to enter a number
+        var number = prompt("Enter a number:");
+
+        // Call the arrow function to reverse the number
+        const reversedNumber = reverseNumber(number);
+
+        // Display the reversed number using an alert box
+        alert("The reversed number is: " + reversedNumber);
+
+        
+
+    </script>
+</body>
+</html>
