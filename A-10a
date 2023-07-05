@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        // Function to search and extract a date from a string
+        function extractDateFromString(str) {
+            // Regular expression pattern to match a date in the format DD/MM/YYYY
+            var datePattern = /\d{2}\/\d{2}\/\d{4}/;
+
+            // Search for the date pattern within the string
+            var matches = str.match(datePattern);
+
+            if (matches && matches.length > 0) {
+                return matches[0]; // Return the first match found
+            } else {
+                return null; // No date found in the string
+            }
+        }
+
+        // Sample input string
+        var inputString = "Albert Einstein was born in Ulm, on 14/03/1879.";
+
+        // Extract the date from the input string
+        var extractedDate = extractDateFromString(inputString);
+
+        // Display the extracted date using alert
+        if (extractedDate) {
+            alert(extractedDate);
+        } else {
+            alert("No date found in the string.");
+        }
+
+    </script>
+</body>
+</html>
