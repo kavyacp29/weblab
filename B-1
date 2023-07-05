@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        let obj = {}, map = new Map();
+let users = ["John", "mohan", "kumar", "tg", "Ram", "laksh"];
+
+for (let i = 0; i < users.length; i++) {
+  obj[i]=users[i];
+  map.set(i, users[i]);
+}
+let result;
+console.log(obj);
+console.log(map);
+console.time('Object'); 
+result = obj.hasOwnProperty("moh"); 
+console.timeEnd('Object');
+console.time('Map'); 
+result = map.has("moh"); 
+console.timeEnd('Map');
+
+
+        // Example using Map
+        var map = new Map();
+
+        // Add key-value pairs to the Map
+        map.set("name", "John");
+        map.set("age", 30);
+        map.set("city", "New York");
+
+        // Remove a key-value pair from the Map
+        map.delete("age");
+
+        // Example using Object
+        var obj = {};
+
+        // Add properties to the Object
+        obj.name = "John";
+        obj.age = 30;
+        obj.city = "New York";
+
+        // Remove a property from the Object
+        delete obj.age;
+
+        console.log(map);
+        console.log(obj);
+
+    </script>
+</body>
+</html>
