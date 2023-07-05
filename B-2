@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        let arr = [], set = new Set();
+        let users = ["John", "Mohan", "Kumar", "Karthik", "Kiran", "John"];
+        for (let i = 0; i < users.length; i++) {
+            arr.push(users[i]);
+            set.add(users[i]);
+        }
+        let result;
+
+        console.time('Array');
+        result = arr.indexOf("Mohan") !== -1;
+        console.timeEnd('Array');
+
+        console.time('Set');
+        result = set.has("Mohan");
+        console.timeEnd('Set');
+    </script>
+</body>
+</html>
