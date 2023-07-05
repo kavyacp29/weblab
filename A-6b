@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Event Demo</title>
+</head>
+<body>
+    <h2>JavaScript Event Demo</h2>
+    <button id="clickButton">Click Me</button>
+    <div id="hoverDiv">Hover over me</div>
+    <input type="text" id="changeInput">
+    <p id="keydownPara"></p>
+
+    <script>
+        // onClick event handler
+        function onClickHandler() {
+            alert("Button Clicked!");
+        }
+
+        // onMouseOver event handler
+        function onMouseOverHandler() {
+            document.getElementById("hoverDiv").innerHTML = "Mouse Over";
+        }
+
+        // onMouseOut event handler
+        function onMouseOutHandler() {
+            document.getElementById("hoverDiv").innerHTML = "Hover over me";
+        }
+
+        // onChange event handler
+        function onChangeHandler() {
+            var inputValue = document.getElementById("changeInput").value;
+            document.getElementById("changeInput").value = inputValue.toUpperCase();
+        }
+
+        // onKeyDown event handler
+        function onKeyDownHandler(event) {
+            var keyPressed = event.key;
+            document.getElementById("keydownPara").textContent = "Key Pressed: " + keyPressed;
+        }
+
+        // Get the button element
+        var clickButton = document.getElementById("clickButton");
+
+        // Attach onClick event listener to the button
+        clickButton.addEventListener("click", onClickHandler);
+
+        // Get the div element
+        var hoverDiv = document.getElementById("hoverDiv");
+
+        // Attach onMouseOver event listener to the div
+        hoverDiv.addEventListener("mouseover", onMouseOverHandler);
+
+        // Attach onMouseOut event listener to the div
+        hoverDiv.addEventListener("mouseout", onMouseOutHandler);
+
+        // Get the input element
+        var changeInput = document.getElementById("changeInput");
+
+        // Attach onChange event listener to the input
+        changeInput.addEventListener("change", onChangeHandler);
+
+        // Attach onKeyDown event listener to the document
+        document.addEventListener("keydown", onKeyDownHandler);
+    </script>
+</body>
+</html>
