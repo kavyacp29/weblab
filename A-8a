@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        // Function to split a string into an array of words
+        function splitStringIntoArray(str) {
+            // Split the string into an array of words using the split() method
+            var words = str.split(" ");
+
+            return words;
+        }
+
+        // Prompt the user to enter a string
+        var inputString = prompt("Enter a string:");
+
+        // Split the input string into an array of words
+        var wordsArray = splitStringIntoArray(inputString);
+
+        // Display the array of words
+        console.log(wordsArray);
+
+    </script>
+</body>
+</html>
