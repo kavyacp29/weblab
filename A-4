@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        // Function to perform Jump Search
+        function jumpSearch(key, list) {
+            const n = list.length;
+
+            // Determine the jump size
+            const jumpSize = Math.floor(Math.sqrt(n));
+
+            // Find the block where the key may be present
+            let step = jumpSize;
+            let prev = 0;
+            while (list[Math.min(step, n) - 1] < key) {
+                prev = step;
+                step += jumpSize;
+                if (prev >= n) {
+                    return -1; // Key is not found
+                }
+            }
+
+            // Linear search within the identified block
+            while (list[prev] < key) {
+                prev++;
+                if (prev === Math.min(step, n)) {
+                    return -1; // Key is not found
+                }
+            }
+
+            // Check if the key is found at the current position
+            if (list[prev] === key) {
+                return prev; // Key is found at position 'prev'
+            }
+
+            return -1; // Key is not found
+        }
+
+        // Prompt the user to enter the key and list of numbers
+        var key = parseInt(prompt("Enter the key:"));
+        var numbers = prompt("Enter the list of numbers (space-separated):").split(" ").map(Number);
+
+        // Perform the Jump Search
+        var result = jumpSearch(key, numbers);
+
+        // Report success or failure
+        if (result !== -1) {
+            alert("Key", key, "is found at index", result);
+        } else {
+            alert("Key", key, "is not found in the list.");
+        }
+S
+    </script>
+
+</body>
+</html>
