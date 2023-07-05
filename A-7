@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        // Function to perform binary search on a sorted array
+        function binarySearch(arr, target) {
+            var left = 0;
+            var right = arr.length - 1;
+
+            while (left <= right) {
+                var mid = Math.floor((left + right) / 2);
+
+                if (arr[mid] === target) {
+                    return mid; // Element found at index 'mid'
+                } else if (arr[mid] < target) {
+                    left = mid + 1; // Search the right half
+                } else {
+                    right = mid - 1; // Search the left half
+                }
+            }
+
+            return -1; // Element not found
+        }
+
+        // Prompt the user to enter the elements and build the array
+        var input = prompt("Enter elements for the array (space-separated):");
+        var elements = input.split(" ").map(Number);
+
+        // Sort the array in ascending order
+        elements.sort(function (a, b) {
+            return a - b;
+        });
+
+        // Prompt the user to enter the element to search
+        var target = parseInt(prompt("Enter the element to search:"));
+
+        // Perform binary search on the sorted array
+        var result = binarySearch(elements, target);
+
+        // Display the search result
+        if (result !== -1) {
+            alert("Element", target, "found at index", result);
+        } else {
+            alert("Element", target, "not found in the array.");
+        }
+
+    </script>
+</body>
+</html>
