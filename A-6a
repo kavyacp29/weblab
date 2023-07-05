@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        // Function to capitalize the first letter of each word in a string
+        function capitalizeFirstLetter(str) {
+            var words = str.split(" ");
+            var capitalizedWords = [];
+
+            for (var i = 0; i < words.length; i++) {
+                var word = words[i];
+                var capitalizedWord = word.charAt(0).toUpperCase() + word.slice(1);
+                capitalizedWords.push(capitalizedWord);
+            }
+
+            return capitalizedWords.join(" ");
+        }
+
+        // Prompt the user to enter a string
+        var inputString = prompt("Enter a string:");
+
+        // Capitalize the first letter of each word
+        var capitalizedString = capitalizeFirstLetter(inputString);
+
+        // Display the capitalized string using an alert
+        alert("Capitalized String:\n" + capitalizedString);
+
+    </script>
+
+</body>
+</html>
