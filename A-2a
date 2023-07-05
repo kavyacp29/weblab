@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        // Define the first callback function
+        function callback1(result) {
+            console.log("Callback 1 executed with result:", result);
+            return result * 2;
+        }
+
+        // Define the second callback function
+        function callback2(result) {
+            console.log("Callback 2 executed with result:", result);
+            return result + 5;
+        }
+
+        // Create a promise object
+        var promiseObject = new Promise(function (resolve, reject) {
+            // Simulating an asynchronous operation
+            setTimeout(function () {
+                var data = 10; // Simulated data
+                resolve(data); // Resolve the promise with the data
+            }, 2000);
+        });
+
+        // Use promiseObject.then to chain the callback functions
+        promiseObject
+            .then(callback1)
+            .then(callback2)
+            .then(function (finalResult) {
+                console.log("Final result:", finalResult);
+            })
+            .catch(function (error) {
+                console.log("An error occurred:", error);
+            });
+
+    </script>
+
+</body>
+</html>
