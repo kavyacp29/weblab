@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        const convertWeight = (kg) => {
+            const lbs = kg * 2.2;
+
+            if (lbs > 150) {
+                return "obese";
+            } else if (lbs >= 100 && lbs <= 150) {
+                return "you are ok";
+            } else {
+                return "underweight";
+            }
+        };
+
+        // Example usage:
+        const weightInKg = 70;
+        const result = convertWeight(weightInKg);
+        console.log(result);
+
+    </script>
+</body>
+</html>
